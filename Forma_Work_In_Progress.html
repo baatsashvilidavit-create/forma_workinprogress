@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1eb">
+  <meta name="description" content="Forma is taking shape. A new experience is on its way.">
+  <title>Forma — Taking shape</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+    :root{--paper:#f4f1eb;--ink:#18221d;--green:#c4e04a;--muted:#777d73;--line:rgba(24,34,29,.18)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif;min-height:100vh}
+    .page{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:30px clamp(24px,5.2vw,80px) 25px;overflow:hidden;position:relative}
+    .topbar,.footer{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+    .brand{display:flex;gap:11px;align-items:center;text-decoration:none;color:inherit;font-size:15px;font-weight:800;letter-spacing:.19em}
+    .mark{width:26px;height:26px;display:block}
+    .top-note,.eyebrow,.footer,.micro{font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.12em;font-size:10px}
+    .top-note{color:var(--muted)}
+    main{display:grid;grid-template-columns:1.06fr .94fr;align-items:center;max-width:1440px;width:100%;margin:0 auto;min-height:650px;position:relative}
+    .copy{padding:8vh 0 7vh;position:relative;z-index:1}
+    .eyebrow{display:flex;gap:12px;align-items:center;color:#526148;margin:0 0 30px}
+    .eyebrow:before{content:"";width:27px;height:1px;background:#526148}
+    h1{font-size:clamp(64px,10.2vw,150px);line-height:.84;letter-spacing:-.09em;margin:0;font-weight:600}
+    h1 span{display:block}
+    h1 .second{font-weight:400;font-family:Georgia,serif;font-style:italic;letter-spacing:-.105em;margin-left:.34em}
+    .intro{font-size:clamp(15px,1.35vw,18px);line-height:1.75;max-width:380px;color:#5f655c;margin:36px 0 0}
+    .status{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:30px;padding:10px 14px;margin-top:34px;font:10px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+    .dot{width:7px;height:7px;border-radius:100%;background:#809d1c;box-shadow:0 0 0 4px rgba(128,157,28,.13);animation:pulse 2s infinite}
+    .visual{height:min(70vh,650px);min-height:430px;position:relative;display:grid;place-items:center}
+    .orbit{position:absolute;border:1px solid rgba(24,34,29,.16);border-radius:50%;width:min(42vw,590px);aspect-ratio:1;transform:rotate(-24deg) scaleY(.75)}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(24,34,29,.12);border-radius:50%;inset:11%;transform:rotate(56deg) scaleY(.76)}
+    .orbit:after{inset:23%;transform:rotate(-48deg) scaleY(.78)}
+    .sphere{width:min(27vw,360px);aspect-ratio:1;border-radius:50%;position:relative;background:radial-gradient(circle at 32% 26%,#e5f38a 0,#c7df55 25%,#9eb83a 54%,#738821 78%,#4b5f1c 100%);box-shadow:inset -24px -28px 48px rgba(41,57,9,.32),inset 9px 8px 22px rgba(255,255,220,.55),0 38px 70px rgba(62,77,23,.18);animation:float 7s ease-in-out infinite}
+    .sphere:before{content:"";position:absolute;inset:8% 13% 46% 10%;border-radius:50%;background:linear-gradient(155deg,rgba(255,255,255,.44),transparent 66%);filter:blur(8px);transform:rotate(-20deg)}
+    .sphere:after{content:"";position:absolute;inset:15%;border:1px solid rgba(238,255,164,.32);border-radius:50%;transform:rotate(32deg) scaleY(.36)}
+    .cross{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--ink);top:17%;right:18%;box-shadow:0 0 0 7px var(--paper),0 0 0 8px var(--line)}
+    .caption{position:absolute;bottom:12%;right:3%;font:10px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl}
+    .footer{border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:9px}
+    .footer .right{display:flex;gap:26px}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-14px) rotate(-4deg)}}
+    @keyframes pulse{50%{box-shadow:0 0 0 7px rgba(128,157,28,.04)}}
+    @media(max-width:760px){.page{padding:24px 23px 20px}main{grid-template-columns:1fr;grid-template-rows:auto 1fr;min-height:0}.copy{padding:12vh 0 0}h1{font-size:clamp(70px,17vw,120px)}.intro{margin-top:27px}.visual{min-height:280px;height:38vh;margin-top:-1vh}.orbit{width:min(76vw,390px)}.sphere{width:min(48vw,245px)}.caption{right:4%;bottom:15%}.footer{font-size:8px}.footer .right{gap:10px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Forma home">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 27V5h24v6H11v4h13v6H11v6H4Z" fill="#18221d"/><circle cx="26" cy="25" r="3" fill="#a9c83b"/></svg>
+        FORMA
+      </a>
+      <div class="top-note">Independent by nature&nbsp; · &nbsp;Est. 2026</div>
+    </header>
+    <main>
+      <section class="copy" aria-labelledby="headline">
+        <p class="eyebrow">A new chapter is taking shape</p>
+        <h1 id="headline"><span>Work in</span><span class="second">progress.</span></h1>
+        <p class="intro">We’re making room for something considered, useful, and distinctly Forma. The full picture is almost ready.</p>
+        <div class="status"><span class="dot"></span> Currently shaping things</div>
+      </section>
+      <div class="visual" aria-hidden="true">
+        <div class="orbit"></div><div class="sphere"></div><span class="cross"></span>
+        <span class="caption">Good things take form&nbsp; — &nbsp;01 / 03</span>
+      </div>
+    </main>
+    <footer class="footer"><span>© 2026 Forma Studio</span><span class="right"><span>Made with intention</span><span>Come back soon ↗</span></span></footer>
+  </div>
+</body>
+</html>
